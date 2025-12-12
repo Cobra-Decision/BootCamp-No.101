@@ -1,0 +1,23 @@
+﻿@* @model Ticket.Application.DTO.LoginDto
+@{
+    ViewData["Title"] = "Login";
+}
+
+<h2>ورود به حساب</h2>
+
+
+<form method="post" asp-controller="Auth" asp-action="Login" asp-route-area="" class="space-y-4" style="direction:rtl; text-align: right; max-width: 350px;">
+    <div>
+        <label> ایمیل یا شماره تلفن</label>
+        <input type="text" name="Username" class="form-control" placeholder="ایمیل یا تلفن خود را وارد کنید" required/>
+    </div>
+    <div>
+        <label>رمز عبور</label>
+        <input type="password" name="password" class="form-control" placeholder="رمز را وارد کنید" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary" style="width:100%; margin-top:10px;"> ورود </button>
+    
+</form> *@
+
+

@@ -1,0 +1,11 @@
+C:\Users\Asus\source\repos\Ticket\TicketDomain\bin\Debug\net8.0\TicketDomain.deps.json
+C:\Users\Asus\source\repos\Ticket\TicketDomain\bin\Debug\net8.0\TicketDomain.dll
+C:\Users\Asus\source\repos\Ticket\TicketDomain\bin\Debug\net8.0\TicketDomain.pdb
+C:\Users\Asus\source\repos\Ticket\TicketDomain\obj\Debug\net8.0\TicketDomain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Asus\source\repos\Ticket\TicketDomain\obj\Debug\net8.0\TicketDomain.AssemblyInfoInputs.cache
+C:\Users\Asus\source\repos\Ticket\TicketDomain\obj\Debug\net8.0\TicketDomain.AssemblyInfo.cs
+C:\Users\Asus\source\repos\Ticket\TicketDomain\obj\Debug\net8.0\TicketDomain.csproj.CoreCompileInputs.cache
+C:\Users\Asus\source\repos\Ticket\TicketDomain\obj\Debug\net8.0\TicketDomain.dll
+C:\Users\Asus\source\repos\Ticket\TicketDomain\obj\Debug\net8.0\refint\TicketDomain.dll
+C:\Users\Asus\source\repos\Ticket\TicketDomain\obj\Debug\net8.0\TicketDomain.pdb
+C:\Users\Asus\source\repos\Ticket\TicketDomain\obj\Debug\net8.0\ref\TicketDomain.dll
