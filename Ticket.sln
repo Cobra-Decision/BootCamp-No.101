@@ -9,15 +9,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ticketing.infra", "Ticketin
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ticketing.Presentation", "Ticketing.Presentation", "{4FB81C65-5751-4B0C-B78D-DA67E2D00121}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Domain", "TicketDomain\Ticketing.Domain.csproj", "{262440FF-A37D-4BBE-A52C-5DE4A1802E43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Domain", "Ticketing.Domain\Ticketing.Domain.csproj", "{262440FF-A37D-4BBE-A52C-5DE4A1802E43}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.infra", "TicketInfra\Ticketing.infra.csproj", "{5955BAF2-2C9D-40E0-A014-FEA0A5748D33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.infra", "Ticketing.Infra\Ticketing.infra.csproj", "{5955BAF2-2C9D-40E0-A014-FEA0A5748D33}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Presentation", "TicketPresentation\Ticketing.Presentation.csproj", "{651E1FF8-C5D9-4518-9A9D-BBED30BE27D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Presentation", "Ticketing.Presentation\Ticketing.Presentation.csproj", "{651E1FF8-C5D9-4518-9A9D-BBED30BE27D6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ticketing.Application", "Ticketing.Application", "{727C954E-78B4-48AD-8A19-CF7086582000}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Application", "Ticket.Application\Ticketing.Application.csproj", "{E4E93771-8663-48D7-9C67-1A96E29D6CCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Application", "Ticketing.Application\Ticketing.Application.csproj", "{E4E93771-8663-48D7-9C67-1A96E29D6CCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
