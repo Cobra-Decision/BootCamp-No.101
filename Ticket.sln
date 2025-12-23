@@ -3,21 +3,21 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.34928.147
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ticket.Domain", "Ticket.Domain", "{3B54DFD7-6048-4A5F-8A16-A1E9E43883E3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ticketing.Domain", "Ticketing.Domain", "{3B54DFD7-6048-4A5F-8A16-A1E9E43883E3}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ticket.infra", "Ticket.infra", "{D2DB2766-C0AE-4E27-8285-1D8E71709ABF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ticketing.infra", "Ticketing.infra", "{D2DB2766-C0AE-4E27-8285-1D8E71709ABF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ticket.Presentation", "Ticket.Presentation", "{4FB81C65-5751-4B0C-B78D-DA67E2D00121}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ticketing.Presentation", "Ticketing.Presentation", "{4FB81C65-5751-4B0C-B78D-DA67E2D00121}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketDomain", "TicketDomain\TicketDomain.csproj", "{262440FF-A37D-4BBE-A52C-5DE4A1802E43}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Domain", "TicketDomain\Ticketing.Domain.csproj", "{262440FF-A37D-4BBE-A52C-5DE4A1802E43}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketInfra", "TicketInfra\TicketInfra.csproj", "{5955BAF2-2C9D-40E0-A014-FEA0A5748D33}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.infra", "TicketInfra\Ticketing.infra.csproj", "{5955BAF2-2C9D-40E0-A014-FEA0A5748D33}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TicketPresentation", "TicketPresentation\TicketPresentation.csproj", "{651E1FF8-C5D9-4518-9A9D-BBED30BE27D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Presentation", "TicketPresentation\Ticketing.Presentation.csproj", "{651E1FF8-C5D9-4518-9A9D-BBED30BE27D6}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ticket.Application", "Ticket.Application", "{727C954E-78B4-48AD-8A19-CF7086582000}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ticketing.Application", "Ticketing.Application", "{727C954E-78B4-48AD-8A19-CF7086582000}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ticket.Application", "Ticket.Application\Ticket.Application.csproj", "{E4E93771-8663-48D7-9C67-1A96E29D6CCA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Ticketing.Application", "Ticket.Application\Ticketing.Application.csproj", "{E4E93771-8663-48D7-9C67-1A96E29D6CCA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
