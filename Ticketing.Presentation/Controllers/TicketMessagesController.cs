@@ -1,8 +1,9 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using TicketDomain;
+using Microsoft.EntityFrameworkCore;
 using Ticketing.Application.DTO;
 using Ticketing.infra;
+using Ticketing.infra.Services;
 
 namespace Ticketing.Presentation.Controllers
 {
@@ -10,19 +11,32 @@ namespace Ticketing.Presentation.Controllers
     [ApiController]
     public class TicketMessagesController : ControllerBase
     {
-        private readonly DatabaseContext _db;
-        public TicketMessagesController (DatabaseContext db)
+        private readonly TicketService _ticketService;
+        public TicketMessagesController(TicketService ticketService)
         {
-            _db = db;
-        }
-        [HttpPost]
-        public IActionResult Create(int ticketid, TicketMessageDto TicketMessageDto)
-        {
-            var PM=_db
-
+            _ticketService = ticketService;
         }
 
-        [HttpGet]
+
+
+
+        
+
+
+
+
+
+        
+
+
+        
+
+
+
+
+
+
+
 
 
     }
