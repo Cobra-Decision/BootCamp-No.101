@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using TicketPresentation.Models;
+using Ticketing.Presentation.Models;
 
 namespace Ticketing.Presentation.Controllers
 {
