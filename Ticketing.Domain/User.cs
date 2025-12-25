@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,8 +20,10 @@ namespace Ticketing.Domain
         public DateTime createAt { get; set; }
 
 
-        public ICollection<Ticket> Tickets { get; set; }
-        public ICollection<TicketMessage> Messages { get; set; }
+       
+        public List<Ticket> Tickets {get; set;}
+        public List<TicketMessage> TicketMessages { get; set; }
 
+        
     }
 }
