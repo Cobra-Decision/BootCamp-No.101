@@ -17,6 +17,6 @@ namespace Ticketing.Application.DTO
         public DateTime CreatedAt { get; set; }
         public DateTime UdatedAt { get; set; }
 
-        public List<TicketMessage> Chat { get; set; }
+        public List<string> Chat { get; set; }
     }
 }
