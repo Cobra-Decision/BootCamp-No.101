@@ -11,17 +11,18 @@ namespace Ticketing.Domain
     {
         public int Id { get; set; }
         public string Title { get; set; }
-        public int User_id { get; set; }
-        public int Department_id { get; set; }
-        public int Status_id { get; set; }
+        public int Department_id { get; set; }        
         public DateTime Created_at { get; set; }
         public DateTime Updated_at { get; set; }
 
 
+        public int TicketStatusId { get; set; }
+        public TicketStatus TicketStatus { get; set; }
 
-        [ForeignKey("UserId")]
         public int UserId { get; set; }
         public User User { get; set; }
+
+        public List<TicketMessage> TicketMessages { get; set; }
 
 
     }
