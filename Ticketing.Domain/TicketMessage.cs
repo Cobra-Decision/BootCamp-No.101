@@ -11,15 +11,16 @@ namespace Ticketing.Domain
     {
         public int Id { get; set; }
         public string Message { get; set; }
-        public int Ticket_Id { get; set; }
-        public int User_Id { get; set; }
         public DateTime Created_At { get; set; }
 
 
+        public int TicketId { get; set; }
+        public Ticket Ticket { get; set; }
 
-
-        [ForeignKey("UserId")]
         public int UserId { get; set; }
         public User User { get; set; }
+
+
+
     }
 }
