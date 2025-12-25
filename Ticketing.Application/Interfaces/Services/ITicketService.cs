@@ -13,7 +13,7 @@ namespace Ticketing.Application.Interfaces.Services
     public interface ITicketService
     {
         Task AddAsync(CreateTicketDto createTicket);
-        IQueryable<Ticket> GetAll();
+        Task<List<Ticket>> GetAll();
         Task<TicketDetailsDto> GetByIdAsync(int id);        
         Task DeleteById(int id);
     }
