@@ -1,7 +1,7 @@
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using Ticket.Application.Interfaces.Services;
+using Ticketing.Application.Interfaces.Services;
 using Ticketing.infra;
 using Ticketing.infra.Services;
 
