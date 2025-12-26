@@ -1,16 +1,10 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Sockets;
-using System.Text;
-using System.Threading.Tasks;
 using Ticketing.Application.DTO;
 using Ticketing.Application.Interfaces.Services;
 using Ticketing.Domain;
 
 
-namespace Ticketing.infra.Services
+namespace Ticketing.Infra.Services
 {
     public class TicketService : ITicketService
     {
@@ -21,42 +15,40 @@ namespace Ticketing.infra.Services
             _db = db;
         }
 
-
-
         public async Task AddAsync(CreateTicketDto createTicket)
         {
+            bool userExists = await _db.Users.AnyAsync(u => u.Id == createTicket.UserId);
+            if (!userExists) throw new KeyNotFoundException("کاربر مورد نظر یافت نشد.");
+
+            bool statusExists = await _db.TicketStatus.AnyAsync(s => s.Id == createTicket.StatusId);
+            if (!statusExists) throw new KeyNotFoundException("وضعیت ارسالی معتبر نیست.");
+
             var ticket = new Ticket
             {
-                Id = createTicket.Id,
                 Title = createTicket.Title,
                 UserId = createTicket.UserId,
-                Department_id = createTicket.DepartmentId,
                 TicketStatusId = createTicket.StatusId,
-                Created_at = createTicket.CreatedAt,
-                Updated_at = createTicket.UdatedAt,
-
+                CreatedAt = createTicket.CreatedAt,
+                UpdatedAt = createTicket.UpdatedAt,
             };
 
 
-            _db.Ticket.Add(ticket);          
+            _db.Ticket.Add(ticket);
             await _db.SaveChangesAsync();
-            
+
         }
-        
-
-
 
         public async Task DeleteById(int id)
         {
-            var ticket = await _db.Ticket.FirstOrDefaultAsync(T => T.Id == id);
-            
-             _db.Ticket.Remove(ticket);
-            await _db.SaveChangesAsync();
-                       
+            var rowsAffected = await _db.Ticket
+                  .Where(t => t.Id == id)
+                .ExecuteDeleteAsync();
+
+            if (rowsAffected == 0)
+            {
+                throw new KeyNotFoundException($"تیکت با شناسه {id} یافت نشد.");
+            }
         }
-
-
-
 
         public async Task<List<Ticket>> GetAll()
         {
@@ -64,15 +56,14 @@ namespace Ticketing.infra.Services
             return tickets;
         }
 
-
-
-
-
-
-        public async Task<TicketDetailsDto> GetByIdAsync(int id)
+        public async Task<TicketDetailsDto?> GetByIdAsync(int id)
         {
             var ticket = await _db.Ticket.Include(t => t.TicketMessages)
                 .FirstOrDefaultAsync(t => t.Id == id);
+            if (ticket == null)
+            {
+                return null;
+            }
 
             var ticketdetailsdto = new TicketDetailsDto
             {
@@ -80,16 +71,13 @@ namespace Ticketing.infra.Services
                 Title = ticket.Title,
                 StatusId = ticket.TicketStatusId,
                 UserId = ticket.UserId,
-                DepartmentId = ticket.Department_id,
-                CreatedAt = ticket.Created_at,
-                UdatedAt = ticket.Updated_at,
+                CreatedAt = ticket.CreatedAt,
+                UpdatedAt = ticket.UpdatedAt,
                 Chat = ticket.TicketMessages.Select(m => m.Message).ToList(),
             };
 
             return ticketdetailsdto;
 
         }
-
-        
     }
 }
