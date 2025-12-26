@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Ticketing.Domain;
 
-namespace Ticketing.infra
+namespace Ticketing.Infra
 {
     public class DatabaseContext : DbContext
     {
@@ -15,7 +15,7 @@ namespace Ticketing.infra
         public DbSet<TicketMessage> TicketMessage { get; set; }
         public DbSet<TicketStatus> TicketStatus { get; set; }
         public DbSet<Ticket> Ticket { get; set; }
-        
+
         public DatabaseContext(DbContextOptions<DatabaseContext> options) : base(options)
         {
 
@@ -43,7 +43,7 @@ namespace Ticketing.infra
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Ticket>()
-                .HasOne(t => t.TicketStatus)
+                .HasOne(t => t.GetTicketStatus())
                 .WithMany(ts => ts.Tickets)
                 .HasForeignKey(t => t.TicketStatusId)
                 .OnDelete(DeleteBehavior.Restrict);
