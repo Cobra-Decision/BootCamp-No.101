@@ -1,9 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Ticketing.Domain;
 
 namespace Ticketing.Infra
@@ -43,7 +38,7 @@ namespace Ticketing.Infra
                 .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Ticket>()
-                .HasOne(t => t.GetTicketStatus())
+                .HasOne(t => t.TicketStatus)
                 .WithMany(ts => ts.Tickets)
                 .HasForeignKey(t => t.TicketStatusId)
                 .OnDelete(DeleteBehavior.Restrict);
