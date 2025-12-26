@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace Ticketing.Application.DTO
 {
     public class LoginDto
     {
-        public string UserName { get; set; }
-        public string Password { get; set; }
-        
+        [Required(ErrorMessage = "نام کاربری الزامی است")]
+        public required string UserName { get; set; }
 
+        [Required(ErrorMessage = "رمز عبور الزامی است")]
+        public required string Password { get; set; }
     }
 }
