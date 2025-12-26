@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Ticketing.Application.DTO;
 
 namespace Ticketing.Application.Interfaces.Services
 {
     public interface IAuthService
     {
-        Task<(bool succes, string message)> LoginAsync();
+        Task<(bool success, string message)> LoginAsync(LoginDto dto);
+        Task<(bool success, string message)> SignupAsync(SignupDto dto);
     }
 }
