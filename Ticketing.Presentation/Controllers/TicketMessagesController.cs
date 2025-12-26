@@ -1,9 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
-using Ticketing.Application.DTO;
-using Ticketing.infra;
-using Ticketing.infra.Services;
+﻿using Microsoft.AspNetCore.Mvc;
+using Ticketing.Application.Interfaces.Services;
 
 namespace Ticketing.Presentation.Controllers
 {
@@ -11,33 +7,10 @@ namespace Ticketing.Presentation.Controllers
     [ApiController]
     public class TicketMessagesController : ControllerBase
     {
-        private readonly TicketService _ticketService;
-        public TicketMessagesController(TicketService ticketService)
+        private readonly ITicketService _ticketService;
+        public TicketMessagesController(ITicketService ticketService)
         {
             _ticketService = ticketService;
         }
-
-
-
-
-        
-
-
-
-
-
-        
-
-
-        
-
-
-
-
-
-
-
-
-
     }
 }
