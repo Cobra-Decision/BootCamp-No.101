@@ -1,19 +1,21 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace Ticketing.Application.DTO
+namespace Ticketing.Application.DTO;
+
+public class CreateTicketDto
 {
-    public class CreateTicketDto
-    {
-        public int Id { get; set; }
-        public string Title { get; set; }
-        public int UserId { get; set; }
-        public int DepartmentId { get; set; }
-        public int StatusId { get; set; }
-        public DateTime CreatedAt { get; set; }      
-        public DateTime UdatedAt { get; set; }
-    }
+    [Required(ErrorMessage = "وارد کردن عنوان تیکت الزامی است")]
+    [StringLength(100, ErrorMessage = "عنوان تیکت نمی‌تواند بیشتر از ۱۰۰ کاراکتر باشد")]
+    public required string Title { get; set; }
+
+    [Required(ErrorMessage = "شناسه کاربر الزامی است")]
+    public int UserId { get; set; }
+
+
+    [Required(ErrorMessage = "وضعیت تیکت باید مشخص باشد")]
+    public int StatusId { get; set; }
+
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+
+    public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 }
