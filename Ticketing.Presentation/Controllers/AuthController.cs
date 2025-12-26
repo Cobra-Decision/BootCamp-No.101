@@ -1,30 +1,45 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿
 using Microsoft.AspNetCore.Mvc;
 using Ticketing.Application.DTO;
-using Ticketing.infra.Services;
+using Ticketing.Application.Interfaces.Services;
 
-namespace Ticketing.Presentation.Controllers
+namespace Ticketing.Presentation.Controllers;
+
+[Route("api/[controller]")]
+[ApiController]
+public class AuthController : ControllerBase
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class AuthController : ControllerBase
+    private readonly IAuthService _authService;
+
+    public AuthController(IAuthService authService)
     {
-        private readonly AuthService _authService;
-        public AuthController(AuthService authService)
-        { _authService = authService; }
+        _authService = authService;
+    }
 
-        [HttpPost]
-        public async Task<IActionResult> Login(LoginDto loginDto)
-        {
-            var Result = await _authService.LoginAsync(loginDto);
+    [HttpPost("login")]
+    public async Task<IActionResult> Login([FromBody] LoginDto loginDto)
+    {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
 
-            if (!Result.succes)
-                return Unauthorized(Result.message);
+        var (success, message) = await _authService.LoginAsync(loginDto);
 
-            return Ok(Result.message);
+        return success
+            ? Ok(new { message })
+            : Unauthorized(new { message });
+    }
 
-        }
+    [HttpPost("signup")]
+    public async Task<IActionResult> Signup([FromBody] SignupDto signupDto)
+    {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
 
+        var (success, message) = await _authService.SignupAsync(signupDto);
 
+        return success
+            ? Ok(new { message })
+            : Unauthorized(new { message });
     }
 }
+
