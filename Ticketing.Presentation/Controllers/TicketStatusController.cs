@@ -16,3 +16,11 @@ namespace Ticketing.Presentation.Controllers
         }
 
 
+        [HttpPut]
+        public async Task<IActionResult> UpdateStatus(int ticketid, StatusDto dto)
+        {
+            await _statusService.Edit(ticketid, dto);
+            return NoContent ();
+        }
+
+
