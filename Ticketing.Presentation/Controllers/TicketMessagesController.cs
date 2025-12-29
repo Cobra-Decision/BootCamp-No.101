@@ -27,5 +27,13 @@ namespace Ticketing.Presentation.Controllers
 
 
 
+        [HttpPost]
+        public async  Task<IActionResult> CreateMessage (int ticketid, TicketMessageDto dto)
+        {
+
+            return Ok(_service.AddMessage(ticketid, dto));
+            
+        }
+
     }
 }
