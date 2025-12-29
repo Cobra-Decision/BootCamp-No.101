@@ -11,6 +11,9 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<ITicketService, TicketService>();
 builder.Services.AddScoped<IPasswordHasher, PasswordHasher>();
+builder.Services.AddScoped<IUserTicketService, UserTicketService>();
+builder.Services.AddScoped<ITicketMessageService, TicketMessageService>();
+builder.Services.AddScoped<ITicketStatusService, TicketStatusService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

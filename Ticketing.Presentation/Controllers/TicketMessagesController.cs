@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Ticketing.Application.DTO;
 using Ticketing.Application.Interfaces.Services;
 
 namespace Ticketing.Presentation.Controllers
@@ -7,10 +8,32 @@ namespace Ticketing.Presentation.Controllers
     [ApiController]
     public class TicketMessagesController : ControllerBase
     {
-        private readonly ITicketService _ticketService;
-        public TicketMessagesController(ITicketService ticketService)
+        private readonly ITicketMessageService _service;
+        public TicketMessagesController(ITicketMessageService service)
         {
-            _ticketService = ticketService;
+            _service = service;
         }
+
+
+
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> VeiwMessages(int ticketid)
+        {
+           return Ok( _service.GetMessage(ticketid));
+
+
+        }
+
+
+
+        [HttpPost]
+        public async  Task<IActionResult> CreateMessage (int ticketid, TicketMessageDto dto)
+        {
+
+            return Ok(_service.AddMessage(ticketid, dto));
+            
+        }
+
     }
 }
