@@ -7,10 +7,10 @@ namespace Ticketing.Presentation.Controllers
     [ApiController]
     public class TicketMessagesController : ControllerBase
     {
-        private readonly ITicketService _ticketService;
-        public TicketMessagesController(ITicketService ticketService)
+        private readonly ITicketMessageService _service;
+        public TicketMessagesController(ITicketMessageService service)
         {
-            _ticketService = ticketService;
+            _service = service;
         }
     }
 }
