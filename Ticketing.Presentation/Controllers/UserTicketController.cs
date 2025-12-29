@@ -16,3 +16,10 @@ namespace Ticketing.Presentation.Controllers
         }
 
 
+        [HttpGet]
+        public async Task<IActionResult> GetTickets(int id)
+        {
+            return Ok(await _userTicketService.GetAllTicketByUserid(id));
+        }
+
+
