@@ -37,3 +37,25 @@ namespace Ticketing.Infra.Services
             return dto;
 
         }
+
+
+
+
+        public async Task<List<TicketMessageDto>> GetMessage(int ticketid)
+        {
+            var ticketmessages = await _db.TicketMessage.Where(t => t.TicketId == ticketid)
+                .Select(t=> new TicketMessageDto 
+                {
+                    Id=t.Id,
+                    Message=t.Message,
+                    CreatedAt=t.CreatedAt,
+                    TicketId=ticketid,
+                    UserId=t.UserId,
+                                   
+                }).ToListAsync();
+
+            return ticketmessages;
+
+        }
+    }
+}
