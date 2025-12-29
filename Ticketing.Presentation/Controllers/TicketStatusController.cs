@@ -24,3 +24,12 @@ namespace Ticketing.Presentation.Controllers
         }
 
 
+        [HttpGet]
+        public async Task<IActionResult> GetAllStatuses()
+        {
+            var Statuses = await _statusService.GetAll();
+            return Ok(Statuses);
+        }
+
+
+
