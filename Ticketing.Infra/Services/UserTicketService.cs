@@ -26,3 +26,12 @@ namespace Ticketing.Infra.Services
 
         
 
+        public async Task<Ticket> GetTicketByUseridTicketid(int userid, int ticketid)
+        {
+            var Ticket = await _db.Ticket.FirstOrDefaultAsync(t => t.UserId == userid && t.Id == ticketid);
+
+            return Ticket;
+        }
+    
+    }
+}
