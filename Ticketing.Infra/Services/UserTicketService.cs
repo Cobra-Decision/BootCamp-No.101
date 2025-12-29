@@ -18,3 +18,11 @@ namespace Ticketing.Infra.Services
             _db = db;
         }
 
+        public async Task<List<Ticket>> GetAllTicketByUserid(int id)
+        {
+            var Tickets = await _db.Ticket.Where(t => t.UserId == id).ToListAsync();
+            return Tickets;
+        }
+
+        
+
