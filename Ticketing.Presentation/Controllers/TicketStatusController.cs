@@ -33,3 +33,12 @@ namespace Ticketing.Presentation.Controllers
 
 
 
+        [HttpDelete]
+        public async Task<IActionResult> DeleteStatus(int ticketid)
+        {
+            await _statusService.Remove(ticketid);
+            return NoContent();
+        }
+
+    }
+}
